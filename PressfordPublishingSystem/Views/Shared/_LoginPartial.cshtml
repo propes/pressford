@@ -1,0 +1,37 @@
+﻿@using PressfordPublishingSystem.Models
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
+            <li>@Html.ActionLink("Help", "Help", "Home")</li>
+            <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <img style="max-height: 23px; margin-top: -4px; padding-right: 5px;" src="/Content/cog2.png"><span class="caret"></span>
+                </a>
+                <a class="dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-expanded="false">Settings<span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li><span class="identity-name">Logged in as @User.Identity.Name</span></li>
+                    <li role="presentation" class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

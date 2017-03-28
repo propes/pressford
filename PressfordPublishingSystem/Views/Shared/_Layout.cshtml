@@ -30,13 +30,7 @@
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
-                    <li>@Html.ActionLink("Help", "Help", "Home")</li>
-                    <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
         <hr style="margin: 0px; border-top: 3px solid #00adee;" />

@@ -164,3 +164,10 @@ h4 {
     font-weight: normal;
     color: #555555;
 }
+
+
+.dropdown-menu > li > span.identity-name {
+    padding: 3px 20px;
+    color: #777;
+    white-space: nowrap;
+}

@@ -1,0 +1,77 @@
+﻿@using PressfordPublishingSystem.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="container">
+    <img style="position: absolute; top: 56px; right: 0px;" src="/Content/top-right-corner.png">
+    <img style="position: absolute; bottom: 0px; left: 0px; max-height: 400px;" src="/Content/nielsen-corner-design2.png">
+    <div class="row">
+        <div class="col-sm-12">
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <div class="alert alert-success">
+                    @ViewBag.SuccessMessage
+                </div>
+            }
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error:</strong> @ViewBag.ErrorMessage
+                </div>
+            }
+            @if (ViewBag.ConfirmEmail != null)
+            {
+                using (Html.BeginForm("SendConfirmEmail", "Account", new { email = ViewBag.ConfirmEmail }, FormMethod.Post, null))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="alert alert-danger">
+                        <strong>Error: </strong>Your account has not been confirmed. Click here to resend confirmation email.&nbsp;&nbsp;<input type="submit" class="btn btn-xs btn-warning" value="Resend" />
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row" style="margin-top: 10%;">
+            <div class="col-sm-12">
+                <div style="max-width: 380px; display: block; margin-left: auto; margin-right: auto;">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="margin-left: 10px; margin-right: 10px;">
+                            <div class="form-horizontal">
+                                <h2>Log in.</h2>
+                                <hr />
+                                <p class="alert alert-warning">Demo application: login as 'publisher' or 'employee' leaving the password blank</p>
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @style = "max-width:none", @placeholder = "Username" })
+                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                <br />
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @style = "max-width:none", @placeholder = "Password" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                <br />
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.RememberMe)
+                                            @Html.LabelFor(m => m.RememberMe)
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Log in" class="btn btn-primary" style="width:100%;max-width:none;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

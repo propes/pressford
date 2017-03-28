@@ -13,7 +13,7 @@ namespace PressfordPublishingSystem.Tests
     public class HomeControllerTests
     {
         [TestMethod]
-        public void IndexReturnsPage()
+        public void IndexReturnsView()
         {
             var controller = new HomeController();
 
@@ -24,7 +24,7 @@ namespace PressfordPublishingSystem.Tests
         }
 
         [TestMethod]
-        public void HelpReturnsPage()
+        public void HelpReturnsView()
         {
             var controller = new HomeController();
 
@@ -35,7 +35,7 @@ namespace PressfordPublishingSystem.Tests
         }
 
         [TestMethod]
-        public void AboutReturnsPage()
+        public void AboutReturnsView()
         {
             var controller = new HomeController();
 
