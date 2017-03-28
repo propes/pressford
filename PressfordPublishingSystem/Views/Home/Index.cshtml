@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+}
+
+@section styles {
+    <style>
+        .jumbotron {
+            margin-top: 30px;
+            background-color: inherit;
+            border: 1px solid #ddd;
+        }
+
+            .jumbotron h1 {
+                color: #009dd9;
+                font-size: 50px;
+            }
+
+            .jumbotron p {
+                font-size: 21px;
+                font-weight: 200;
+                padding-bottom: 15px;
+            }
+    </style>
+}
+
+<div class="jumbotron">
+    <h1>Welcome!</h1>
+    <p class="lead" style="margin-top: 30px;">This is Pressford Consulting's new publishing platform.</p>
+    <p style="margin-top: 30px;">
+        <a href="#" onclick='alert("To be implemented")' class="btn btn-primary btn-lg" style="min-width: 160px;">View Articles &raquo;</a>
+        <a href="@Url.Action("Help", "Home")" class="btn btn-default btn-lg" style="margin-left: 10px; min-width: 160px;">Learn More &raquo;</a>
+    </p>
+</div>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Pressford Consulting</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+
+    <style>
+        .navbar {
+            border: none;
+        }
+
+        .navbar-nav > li > a {
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
+                    <li>@Html.ActionLink("Help", "Help", "Home")</li>
+                    <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                </ul>
+            </div>
+        </div>
+        <hr style="margin: 0px; border-top: 3px solid #00adee;" />
+    </div>
+
+    <div class="content">
+        <div class="header"></div>
+        <div class="container">
+            @RenderBody()
+            <div class="footer">
+                <div class="container">
+                    <div class="row" style="padding-top: 18px; vertical-align: middle;">
+                        <div class="col-xs-4">
+                            <a style="color: white;" href="@Url.Action("Index", "Home")">
+                                &copy; @DateTime.Now.Year - Pressford Consulting.
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
