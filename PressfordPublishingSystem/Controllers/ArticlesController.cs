@@ -23,11 +23,16 @@ namespace PressfordPublishingSystem.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.SuccessMessage = TempData["SuccessMessage"];
+            return View();
+        }
+
+        public ActionResult ArticlesTable()
+        {
             var articles = _repo.Read().ToList();
             var viewModels = articles.Select(a => _mapper.MapToViewModel(a)).ToList();
 
-            ViewBag.SuccessMessage = TempData["SuccessMessage"];
-            return View(viewModels);
+            return PartialView("ArticlesTable", viewModels);
         }
 
         public ActionResult Edit(int id)

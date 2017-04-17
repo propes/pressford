@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ArticleViewModel>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Date Published</td>
+            <td>Date Modified</td>
+            <td>&nbsp;</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var article in Model)
+        {
+            <tr>
+                <td>@article.Id</td>
+                <td>@article.Title</td>
+                <td>@article.Author</td>
+                <td>@article.DatePublished</td>
+                <td>@article.DateModified</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = article.Id })" title="Edit Article"><span class='glyphicon glyphicon-edit glyphicon-btn' /></a>&nbsp;
+                    <a href="#" onclick="deleteArticle(@article.Id)" title="Delete Article"><span class='glyphicon glyphicon-trash glyphicon-btn' /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

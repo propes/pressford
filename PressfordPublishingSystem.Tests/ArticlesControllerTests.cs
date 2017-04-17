@@ -53,7 +53,20 @@ namespace PressfordPublishingSystem.Tests
         }
 
         [TestMethod]
-        public void IndexReturnsViewWithData()
+        public void IndexReturnsView()
+        {
+            // Arrange
+            var controller = new ArticlesController(mockRepository.Object, mockMapper.Object);
+
+            // Act
+            var result = controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void ArticlesTableReturnsViewWithData()
         {
             // Arrange
             mockRepository.Setup(m => m.Read()).Returns(new[]
@@ -67,7 +80,7 @@ namespace PressfordPublishingSystem.Tests
             var controller = new ArticlesController(mockRepository.Object, mockMapper.Object);
 
             // Act
-            var result = controller.Index() as ViewResult;
+            var result = controller.ArticlesTable() as PartialViewResult;
             var viewModels = result.ViewData.Model as IEnumerable<ArticleViewModel>;
 
             // Assert
