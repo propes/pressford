@@ -20,7 +20,7 @@ namespace PressfordPublishingSystem.Models
                               .Include(a => a.Likes);
         }
 
-        public Article Find(int id)
+        public override Article Find(int id)
         {
             return this.Read().FirstOrDefault(a => a.Id == id);
         }

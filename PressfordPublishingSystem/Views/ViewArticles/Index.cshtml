@@ -84,8 +84,8 @@
             <div class="article-title-block">
                 <div class="article-title">@article.Title</div>
                 <div class="likes-panel">
-                    <span>@article.LikesCount likes</span>&nbsp;
-                    <a href='@Url.Action("LikeArticle", new { article.Id })' class="btn btn-default" title="Like Article"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+                    <span class="likes-count" data-article-id="@article.Id">@article.LikesCount</span><span>&nbsp;likes</span>&nbsp;
+                    <a href="#" onclick="likeArticle(event, @article.Id)" class="btn btn-default" title="Like Article"><span class="glyphicon glyphicon-thumbs-up"></span></a>
                 </div>
             </div>
             <div>
@@ -96,3 +96,23 @@
         <hr />
     }
 </div>
+
+@section scripts {
+    <script>
+        function likeArticle(e, articleId) {
+            e.preventDefault();
+            $.ajax({
+                url: "@Url.Action("LikeArticle")",
+                type: "post",
+                data: { articleId: articleId },
+                success: function (data) {
+                    showMessage($("#divSuccess"), data.message);
+                    $("[data-article-id=" + articleId + "]").text(data.likeCount);
+                },
+                error: function (request, status, error) {
+                    showMessage($("#divError"), error);
+                }
+            });
+        }
+    </script>
+}

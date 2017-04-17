@@ -18,5 +18,7 @@ namespace PressfordPublishingSystem.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             return userIdentity;
         }
+
+        public ICollection<Like> Likes { get; set; }
     }
 }
