@@ -28,5 +28,7 @@ namespace PressfordPublishingSystem.Models
         {
             return new PublisherDbContext();
         }
+
+        public virtual DbSet<Article> Articles { get; set; }
     }
 }
