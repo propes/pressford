@@ -16,7 +16,8 @@ namespace PressfordPublishingSystem.Models
 
         public override IQueryable<Article> Read()
         {
-            return base.Read().Include(a => a.Author);
+            return base.Read().Include(a => a.Author)
+                              .Include(a => a.Likes);
         }
 
         public Article Find(int id)
@@ -26,7 +27,7 @@ namespace PressfordPublishingSystem.Models
 
         public virtual void Create(Article article, string authorId)
         {
-            article.AuthorID = authorId;
+            article.AuthorId = authorId;
             base.Create(article);
         }
     }

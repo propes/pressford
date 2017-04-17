@@ -3,11 +3,6 @@
 }
 
 <style>
-    h1 {
-        font-size: 32px;
-        margin-bottom: 40px;
-    }
-
     table {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -16,7 +11,7 @@
 
 <h1>Articles</h1>
 
-<a class="btn btn-primary" href="@Url.Action("Edit", "Articles", new { id = 0 })"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;New Article</a>&nbsp;
+<a class="btn btn-primary" href="@Url.Action("Edit", "PublishArticles", new { id = 0 })"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;New Article</a>&nbsp;
 <div id="divArticlesTable">
     @Html.Action("ArticlesTable")
 </div>

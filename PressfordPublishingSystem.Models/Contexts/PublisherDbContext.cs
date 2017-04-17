@@ -21,6 +21,9 @@ namespace PressfordPublishingSystem.Models
             // Disable cascade delete by default for one-to-many relationships.
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
+            // Specify cascade deletes.
+            modelBuilder.Entity<Article>().HasMany(a => a.Likes).WithRequired(l => l.Article).WillCascadeOnDelete();
+
             base.OnModelCreating(modelBuilder);
         }
 

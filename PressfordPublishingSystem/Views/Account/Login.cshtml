@@ -3,6 +3,12 @@
     ViewBag.Title = "Log in";
 }
 
+<style>
+    h2 {
+        margin-bottom: 30px;
+    }
+</style>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -42,8 +48,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body" style="margin-left: 10px; margin-right: 10px;">
                             <div class="form-horizontal">
-                                <h2>Log in.</h2>
-                                <hr />
+                                <h2>Log in</h2>
                                 <p class="alert alert-warning">Demo application: login as 'publisher' or 'employee' leaving the password blank</p>
                                 @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @style = "max-width:none", @placeholder = "Username" })
                                 @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })

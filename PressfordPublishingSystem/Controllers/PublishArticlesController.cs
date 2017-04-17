@@ -10,12 +10,12 @@ using System.Web.Mvc;
 namespace PressfordPublishingSystem.Controllers
 {
     [Authorize]
-    public class ArticlesController : Controller
+    public class PublishArticlesController : Controller
     {
         private readonly IArticleRepository _repo;
         private readonly IModelMapper<Article, ArticleViewModel> _mapper;
 
-        public ArticlesController(IArticleRepository repo, IModelMapper<Article, ArticleViewModel> mapper)
+        public PublishArticlesController(IArticleRepository repo, IModelMapper<Article, ArticleViewModel> mapper)
         {
             _repo = repo;
             _mapper = mapper;

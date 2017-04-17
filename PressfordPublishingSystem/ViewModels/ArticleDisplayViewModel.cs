@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PressfordPublishingSystem.Models
 {
-    public class Article
+    public class ArticleDisplayViewModel
     {
         public int Id { get; set; }
 
@@ -14,17 +15,12 @@ namespace PressfordPublishingSystem.Models
 
         public string Body { get; set; }
 
-        public string AuthorId { get; set; }
+        public string Author { get; set; }
 
         public DateTime DatePublished { get; set; }
 
         public DateTime DateModified { get; set; }
 
-
-        // Navigation Properties.
-
-        public User Author { get; set; }
-
-        public ICollection<Like> Likes { get; set; }
+        public int LikesCount { get; set; }
     }
 }

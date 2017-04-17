@@ -37,6 +37,7 @@ namespace PressfordPublishingSystem.Infrastructure
             _kernel.Bind<IEntityRepository<Article>>().To<EntityRepository<Article>>();
             _kernel.Bind<IArticleRepository>().To<ArticleRepository>();
             _kernel.Bind<IModelMapper<Article, ArticleViewModel>>().To<ArticleMapper>();
+            _kernel.Bind<IModelMapper<Article, ArticleDisplayViewModel>>().To<ArticleDisplayMapper>();
         }
     }
 }

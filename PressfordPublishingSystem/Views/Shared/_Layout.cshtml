@@ -8,9 +8,12 @@
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", required: false)
 
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+
     <style>
         .navbar {
             border: none;
+            background-color: white;
         }
 
         .navbar-nav > li > a {
@@ -52,18 +55,20 @@
     <div id="divSuccess" class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok"></span><span class="message-text"></span></div>
     <div id="divError" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove"></span><span class="message-text"></span></div>
 
-    <div class="content">
-        <div class="header"></div>
-        <div class="container">
-            @RenderBody()
-            <div class="footer">
-                <div class="container">
-                    <div class="row" style="padding-top: 18px; vertical-align: middle;">
-                        <div class="col-xs-4">
-                            <a style="color: white;" href="@Url.Action("Index", "Home")">
-                                &copy; @DateTime.Now.Year - Pressford Consulting.
-                            </a>
-                        </div>
+    <div class="wrapper">
+        <div class="content">
+            <div class="header"></div>
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row" style="padding-top: 18px; vertical-align: middle;">
+                    <div class="col-xs-4">
+                        <a style="color: white;" href="@Url.Action("Index", "Home")">
+                            &copy; @DateTime.Now.Year - Pressford Consulting.
+                        </a>
                     </div>
                 </div>
             </div>

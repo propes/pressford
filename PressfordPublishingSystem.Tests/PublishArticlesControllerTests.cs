@@ -15,7 +15,7 @@ using System.Web.Mvc;
 namespace PressfordPublishingSystem.Tests
 {
     [TestClass]
-    public class ArticlesControllerTests
+    public class PublishArticlesControllerTests
     {
         //private Mock<ArticleRepository> mockRepository;
         private Mock<IModelMapper<Article, ArticleViewModel>> mockMapper;
@@ -32,9 +32,9 @@ namespace PressfordPublishingSystem.Tests
             mockMapper.Setup(m => m.MapToModel(It.IsAny<ArticleViewModel>())).Returns<ArticleViewModel>(m => new Article { Id = m.Id });
         }
 
-        private ArticlesController GetTestObject()
+        private PublishArticlesController GetTestObject()
         {
-            var controller = new ArticlesController(mockRepository.Object, mockMapper.Object);
+            var controller = new PublishArticlesController(mockRepository.Object, mockMapper.Object);
 
             // Mock the user, identity and controller context.
             var identityMock = new Mock<IIdentity>();
@@ -56,7 +56,7 @@ namespace PressfordPublishingSystem.Tests
         public void IndexReturnsView()
         {
             // Arrange
-            var controller = new ArticlesController(mockRepository.Object, mockMapper.Object);
+            var controller = new PublishArticlesController(mockRepository.Object, mockMapper.Object);
 
             // Act
             var result = controller.Index() as ViewResult;
@@ -77,7 +77,7 @@ namespace PressfordPublishingSystem.Tests
             }
             .AsQueryable());
 
-            var controller = new ArticlesController(mockRepository.Object, mockMapper.Object);
+            var controller = new PublishArticlesController(mockRepository.Object, mockMapper.Object);
 
             // Act
             var result = controller.ArticlesTable() as PartialViewResult;
@@ -95,7 +95,7 @@ namespace PressfordPublishingSystem.Tests
         public void EditReturnsEmptyViewModelIfIdIsZero()
         {
             // Arrange
-            var controller = new ArticlesController(mockRepository.Object, mockMapper.Object);
+            var controller = new PublishArticlesController(mockRepository.Object, mockMapper.Object);
             var id = 0;
 
             // Act
@@ -111,7 +111,7 @@ namespace PressfordPublishingSystem.Tests
         public void EditReturnsMappedViewModelIfIdExists()
         {
             // Arrange
-            var controller = new ArticlesController(mockRepository.Object, mockMapper.Object);
+            var controller = new PublishArticlesController(mockRepository.Object, mockMapper.Object);
             var id = 2;
 
             // Act

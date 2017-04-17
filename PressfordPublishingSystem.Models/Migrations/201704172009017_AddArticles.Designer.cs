@@ -7,13 +7,13 @@ namespace PressfordPublishingSystem.Models.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Article : IMigrationMetadata
+    public sealed partial class AddArticles : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Article));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddArticles));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703292107425_Article"; }
+            get { return "201704172009017_AddArticles"; }
         }
         
         string IMigrationMetadata.Source

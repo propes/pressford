@@ -63,21 +63,21 @@ html, body {
 }
 
 
-.wrapper{
+.wrapper {
     min-height: 100%; 
     position: relative;
 }
 
-.header{
+.header {
     padding: 25px;
 }
 
-.content{
+.content {
     padding-top: 10px;
     padding-bottom: 70px; 
 }
 
-.footer{
+.footer {
     width: 100%; 
     height: 50px; 
     position: absolute;
@@ -88,7 +88,7 @@ html, body {
 }
 
 
-.container{
+.container {
     width: inherit;
     max-width: 1400px;
 }
@@ -127,17 +127,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 32px;
+    margin-bottom: 40px;
     font-weight: normal;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: normal;
 }
 
 h3 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: normal;
 }
 
@@ -146,28 +147,14 @@ h4 {
     font-weight: normal;
 }
 
-
-/* Kendo Grids */
-
-.k-grid .k-button {
-    border: none;
-    background: none;
-}
-
-.k-grid tbody .k-button {
-    min-width: 25px;
-    margin: 1px;
-}
-
-.k-grid-header th.k-header > .k-link {
-    font-size: 12px;
-    font-weight: normal;
-    color: #555555;
-}
-
-
 .dropdown-menu > li > span.identity-name {
     padding: 3px 20px;
     color: #777;
     white-space: nowrap;
+}
+
+.page-header {
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 0px;
 }

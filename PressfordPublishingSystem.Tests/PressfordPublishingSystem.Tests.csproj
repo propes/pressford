@@ -102,7 +102,7 @@
   <ItemGroup>
     <Compile Include="AccountControllerTests.cs" />
     <Compile Include="ArticleMapperTests.cs" />
-    <Compile Include="ArticlesControllerTests.cs" />
+    <Compile Include="PublishArticlesControllerTests.cs" />
     <Compile Include="HomeControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
