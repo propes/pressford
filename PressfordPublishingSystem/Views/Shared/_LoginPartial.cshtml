@@ -8,7 +8,12 @@
         <ul class="nav navbar-nav">
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
             <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
-            <li>@Html.ActionLink("Publish", "Index", "PublishArticles")</li>
+            <li>@Html.ActionLink("Articles", "Index", "ViewArticles")</li>
+            @if (User.IsInRole(UserRole.Publisher))
+            {
+                <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
+                <li>@Html.ActionLink("Publish", "Index", "PublishArticles")</li>
+            }
             <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>
             <li>@Html.ActionLink("Help", "Help", "Home")</li>
             <li class="hidden-xs"><span style="padding: 15px; display: block; color: #009dd9;">|</span></li>

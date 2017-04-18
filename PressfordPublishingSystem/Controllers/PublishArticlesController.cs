@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace PressfordPublishingSystem.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = UserRole.Publisher)]
     public class PublishArticlesController : Controller
     {
         private readonly IArticleRepository _repo;
