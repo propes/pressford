@@ -170,10 +170,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\PressfordPublishing.mdf" />
-    <Content Include="App_Data\PressfordPublishing_log.ldf">
-      <DependentUpon>PressfordPublishing.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\cog2.png" />
     <Content Include="Content\site.css" />
     <Content Include="packages.config" />
@@ -247,7 +243,9 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ViewArticlesViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PressfordPublishingSystem.Models\PressfordPublishingSystem.Models.csproj">
       <Project>{9d26e908-e7c4-4f85-b73e-63a1b63e57f0}</Project>
