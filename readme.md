@@ -5,7 +5,7 @@ TechSolutions Developer Assessment
 Deployment Intructions
 ----------------------
 
-I have used EF code first migrations so the SQL server database will need to be created. The connection string will need to be updated to either the Local DB instance of the machine it will be testd on or a SQL server instance and the *update-database* command run for the project *PressfordPublishingSystem.Models*. The database is seeded with sample users and articles.
+I have used EF code first migrations so the SQL server database will need to be created. The connection string will need to be updated to either the Local DB instance of the machine it will be tested on or a SQL server instance and the *update-database* command run against the project *PressfordPublishingSystem.Models*. The database is seeded with sample users and articles.
 
 Login instructions are provided on the login page.
 
